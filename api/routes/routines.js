@@ -11,8 +11,8 @@ router.route('/add').post((req, res) => {
   const username = req.body.username;
   const description = req.body.description;
   const duration = Number(req.body.duration);
-  const date = Date.parse(req.body.date);
-
+  const date = new Date(req.body.date);
+  console.log(req.body.date, date);
   const newRoutine = new Routine({
     username,
     description,
@@ -44,6 +44,7 @@ router.route('/update/:id').post((req, res) => {
       routine.description = req.body.description;
       routine.duration = Number(req.body.duration);
       routine.date = Date.parse(req.body.date);
+      console.log(req.body.date, routine.date);
 
       routine.save()
         .then(() => res.json('Routine updated!'))

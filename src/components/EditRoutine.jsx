@@ -5,7 +5,8 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from 'react-router-dom';
 
-const EditRoutine = (props) => {
+
+const EditRoutine = () => {
 
     let initialState = {
         username: '',
@@ -64,6 +65,7 @@ const EditRoutine = (props) => {
     };
 
     function handleDateChange(date){
+        
         setState(prevState => {
             return {
                 ...prevState,
@@ -83,7 +85,7 @@ const EditRoutine = (props) => {
         date: state.date
         }
 
-        console.log(routine);
+        console.log(routine, routine.date);
 
         axios.post('http://localhost:8800/routines/update/' + id, routine)
         .then(res => console.log(res.data));
