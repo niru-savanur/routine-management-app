@@ -91,7 +91,7 @@ const EditRoutine = () => {
 
     return (
         <div>
-            <h3>Edit Exercise Log</h3>
+            <h3>Edit Routine Log</h3>
             <form onSubmit={onSubmit}>
                 <div className="form-group"> 
                 <label>Username: </label>
