@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+
 import { useParams } from 'react-router-dom';
+
 
 
 const EditRoutine = () => {
@@ -64,15 +64,7 @@ const EditRoutine = () => {
         });
     };
 
-    function handleDateChange(date){
-        
-        setState(prevState => {
-            return {
-                ...prevState,
-                date: date
-            };
-        });
-    }
+
 
 
     function onSubmit(e) {
@@ -90,7 +82,9 @@ const EditRoutine = () => {
         axios.post('http://localhost:8800/routines/update/' + id, routine)
         .then(res => console.log(res.data));
 
-        window.location = '/';
+        setTimeout(function(){ window.location = '/'; }, 500);
+
+        
     }
 
     
@@ -140,10 +134,11 @@ const EditRoutine = () => {
                 <div className="form-group">
                 <label>Date: </label>
                 <div>
-                    <DatePicker
+                    <input
+                    type="date"
                     name="date"
-                    selected={state.date}
-                    onChange={handleDateChange}
+                    value={state.date}
+                    onChange={handleChange}
                     />
                 </div>
                 </div>

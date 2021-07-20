@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+
 
 const CreateRoutine = () => {
     let initialState = {
@@ -42,14 +41,7 @@ const CreateRoutine = () => {
         });
     };
 
-    function handleDateChange(date){
-        setState(prevState => {
-            return {
-                ...prevState,
-                date: date
-            };
-        });
-    }
+    
 
     function onSubmit(e){
         e.preventDefault();
@@ -111,9 +103,11 @@ const CreateRoutine = () => {
                 <div className="form-group">
                 <label>Date: </label>
                 <div>
-                    <DatePicker
-                    selected={state.date}
-                    onChange={handleDateChange}
+                    <input
+                    type="date"
+                    name="date"
+                    value={state.date}
+                    onChange={handleChange}
                     />
                 </div>
                 </div>
