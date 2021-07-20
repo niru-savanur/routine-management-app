@@ -66,9 +66,6 @@ const CreateRoutine = () => {
 
 
 
-    
-   
-
     return (
          <div>
             <h3>Create New Routine Log</h3>
@@ -128,5 +125,6 @@ const CreateRoutine = () => {
             </div>
     );
 }
+
 
 export default CreateRoutine;

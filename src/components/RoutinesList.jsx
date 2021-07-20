@@ -52,7 +52,7 @@ const RoutinesList = () => {
     return (
         <div>
             <h3>Logged Routines</h3>
-            <table className="table" striped bordered hover>
+            <table className="table">
             <thead className="thead-light">
                 <tr>
                 <th>Username</th>
